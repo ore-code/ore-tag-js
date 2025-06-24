@@ -1,0 +1,30 @@
+{
+  "name": "ore-js",
+  "version": "1.0.0",
+  "description": "A lightweight web component framework that runs on the metal, requiring no tooling or build steps.",
+  "main": "src/ore.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "parcel src/ore.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ore-code/ore-js.git"
+  },
+  "keywords": [
+    "js",
+    "ore"
+  ],
+  "author": "Eric Harms",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ore-code/ore-js/issues"
+  },
+  "homepage": "https://github.com/ore-code/ore-js#readme",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  }
+}
