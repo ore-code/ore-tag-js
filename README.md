@@ -6,5 +6,6 @@ Coming soon.
 
 ## Contributing
 
-We welcome contributions from the community! To get started, please review our Contributing Guidelines at:  
+We welcome contributions from the community! To get started, please review our Contributing Guidelines at:
+
 https://github.com/ore-code/ore-js/blob/main/CONTRIBUTING.md
