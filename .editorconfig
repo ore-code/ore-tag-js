@@ -1,0 +1,9 @@
+root = true
+
+[*]
+indent_style = tab       # Use tabs for indentation
+indent_size = tab        # Use tab width instead of spaces
+end_of_line = lf         # Unix-style line endings
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
