@@ -29,7 +29,7 @@ No build tools. No JSX. Ore is a component library to build simple, lightweight 
 - [Attributes](docs/03-attrs.md)
 - [State](docs/04-state.md)
 - [Methods](docs/05-methods.md)
-- [Methods](docs/06-events.md)
+- [Events](docs/06-events.md)
 - [Child Elements](docs/07-child-elements.md)
 - [Lifecycle Hooks](docs/08-lifecycle-hooks.md)
 - [Styling](docs/09-styling.md)
