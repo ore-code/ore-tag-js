@@ -1,4 +1,4 @@
-# Ore.js
+# OreComponent
 
 No build tools. No JSX. Ore is a component library to build simple, lightweight components that run lightning-fast on the metal, directly in your browser. Effortlessly craft high-performance, elegant web components with zero setup, delivering smooth and seamless experiences that feel instant and intuitive.
 
