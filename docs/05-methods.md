@@ -8,7 +8,7 @@ You can define a method as a class function and call it using `this.methodName()
 
 **JS**
 
-    class HelloWidget extends OreComponent {
+    class HelloWidget extends OreTag {
         greet(name) {
             return `Hello, ${name}`;
         }
@@ -22,7 +22,7 @@ You can define a method as a class function and call it using `this.methodName()
         }
     }
     
-    OreComponent.register("hello-widget", HelloWidget);
+    OreTag.register("hello-widget", HelloWidget);
 
 **HTML**
 

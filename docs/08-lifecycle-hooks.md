@@ -8,7 +8,7 @@ The `mounted()` method is a lifecycle hook called after the component is inserte
 
 **JS**
 
-    class HelloWidget extends OreComponent {
+    class HelloWidget extends OreTag {
         mounted() {
             console.log("Component was mounted!");
         }
@@ -18,7 +18,7 @@ The `mounted()` method is a lifecycle hook called after the component is inserte
         }
     }
 
-    OreComponent.register("hello-widget", HelloWidget);
+    OreTag.register("hello-widget", HelloWidget);
 
 **HTML**
 

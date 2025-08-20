@@ -9,7 +9,7 @@ You can read the current state using `this.state`.
 
 **JS**
 
-    class CounterWidget extends OreComponent {
+    class CounterWidget extends OreTag {
         constructor() {
             super();
             this.state = { count: 0 };
@@ -24,7 +24,7 @@ You can read the current state using `this.state`.
         }
     }
 
-    OreComponent.register("counter-widget", CounterWidget);
+    OreTag.register("counter-widget", CounterWidget);
 
 **HTML**
 

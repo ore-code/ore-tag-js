@@ -11,7 +11,7 @@ function _ArrayToObject(_values) {
  * Build a custom web component that has state.
  * @class
  */
-export default class OreComponent extends HTMLElement {
+export default class OreTag extends HTMLElement {
     
     /* Public Properties */
 

@@ -6,7 +6,7 @@ Ore components are styled using standard CSS, written directly inside the `rende
   
 **JS**
  
-    class HelloWidget extends OreComponent {
+    class HelloWidget extends OreTag {
         render() {
             return `
                 <style>
@@ -24,7 +24,7 @@ Ore components are styled using standard CSS, written directly inside the `rende
         }
     }
 
-    OreComponent.register("hello-widget", HelloWidget);
+    OreTag.register("hello-widget", HelloWidget);
 
 **HTML**
 

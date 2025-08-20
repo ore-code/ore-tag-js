@@ -8,7 +8,7 @@ Ore components automatically remove the `defer` attribute during the first rende
 
 **JS**
  
-    class MyWidget extends OreComponent {
+    class MyWidget extends OreTag {
         render() {
             return `
                 <div>
@@ -18,7 +18,7 @@ Ore components automatically remove the `defer` attribute during the first rende
         }
     }
 
-    OreComponent.register("my-widget", MyWidget);
+    OreTag.register("my-widget", MyWidget);
 
 **CSS**
 

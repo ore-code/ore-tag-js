@@ -4,17 +4,17 @@ import terser from '@rollup/plugin-terser'; // ✅ default import
 
 export default [
   {
-    input: 'src/ore.js',
+    input: 'src/ore-tag.js',
     output: {
-      file: 'dist/ore.esm.js',
+      file: 'dist/ore-tag.esm.js',
       format: 'esm',
     },
     plugins: [resolve()],
   },
   {
-    input: 'src/ore.js',
+    input: 'src/ore-tag.js',
     output: {
-      file: 'dist/ore.umd.js',
+      file: 'dist/ore-tag.umd.js',
       format: 'umd',
       name: 'Ore',
     },

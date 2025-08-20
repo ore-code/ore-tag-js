@@ -1,12 +1,12 @@
-# OreComponent
+# Ore Tag
 
-No build tools. No JSX. Ore is a component library to build simple, lightweight components that run lightning-fast on the metal, directly in your browser. Effortlessly craft high-performance, elegant web components with zero setup, delivering smooth and seamless experiences that feel instant and intuitive.
+No build tools. No JSX. Ore Tag is a component library to build simple, lightweight components that run lightning-fast on the metal, directly in your browser. Effortlessly craft high-performance, elegant web components with zero setup, delivering smooth and seamless experiences that feel instant and intuitive.
 
 ## Example
 
 **JS**
 
-    class HelloWidget extends OreComponent {
+    class HelloWidget extends OreTag {
         render() {
             return `
                 <div>
@@ -16,7 +16,7 @@ No build tools. No JSX. Ore is a component library to build simple, lightweight 
         }
     }
  
-    OreComponent.register("hello-widget", HelloWidget);
+    OreTag.register("hello-widget", HelloWidget);
 
 **HTML**
 

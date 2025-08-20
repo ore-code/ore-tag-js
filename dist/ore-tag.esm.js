@@ -11,7 +11,7 @@ function _ArrayToObject(_values) {
  * Build a custom web component that has state.
  * @class
  */
-class OreComponent extends HTMLElement {
+class OreTag extends HTMLElement {
     
     /* Public Properties */
 
@@ -305,4 +305,4 @@ class OreComponent extends HTMLElement {
         canUpdate(_nextAttrs, _nextState) { return true; } 
 }
 
-export { OreComponent as default };
+export { OreTag as default };

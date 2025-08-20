@@ -7,7 +7,7 @@ Child elements passed into a component are handled using native HTML `<slot>` ta
 
 **JS**
 
-    class HelloWidget extends OreComponent {
+    class HelloWidget extends OreTag {
         render() {
             return `
                 <div>
@@ -17,7 +17,7 @@ Child elements passed into a component are handled using native HTML `<slot>` ta
         }
     }
 
-    OreComponent.register("hello-widget", HelloWidget);
+    OreTag.register("hello-widget", HelloWidget);
 
 **HTML**
 

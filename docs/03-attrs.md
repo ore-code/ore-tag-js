@@ -8,7 +8,7 @@ You can read attributes using `this.attrs`.
 
 **JS**
 
-    class HelloWidget extends OreComponent {
+    class HelloWidget extends OreTag {
         render() {
             return `
                 <div>
@@ -18,7 +18,7 @@ You can read attributes using `this.attrs`.
         }
     }
 
-    OreComponent.register("hello-widget", HelloWidget);
+    OreTag.register("hello-widget", HelloWidget);
  
 **HTML**
 

@@ -8,7 +8,7 @@ You define the UI by returning a string of HTML from `render()`.
 
 **JS**
  
-    class HelloWidget extends OreComponent {
+    class HelloWidget extends OreTag {
         render() {
             return `
                 <div>
@@ -21,7 +21,7 @@ You define the UI by returning a string of HTML from `render()`.
     //
     // You must register the component with the DOM.
     //
-    OreComponent.register("hello-widget", HelloWidget);
+    OreTag.register("hello-widget", HelloWidget);
 
 **HTML**
 

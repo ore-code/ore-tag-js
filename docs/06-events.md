@@ -8,7 +8,7 @@ You can bind an event by adding an attribute like `@click="methodName"` directly
  
 **JS**
     
-    class MyWidget extends OreComponent {
+    class MyWidget extends OreTag {
         render() {
             return `
                 <div>
@@ -22,7 +22,7 @@ You can bind an event by adding an attribute like `@click="methodName"` directly
         }
     }
 
-    OreComponent.register("my-widget", MyWidget);
+    OreTag.register("my-widget", MyWidget);
 
 **HTML**
 

@@ -1,5 +1,5 @@
 {
-  "name": "ore-js",
+  "name": "ore-tag",
   "version": "1.0.0",
   "type": "module",
   "description": "A lightweight web component framework that runs on the metal, requiring no tooling or build steps.",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ore-code/ore-js.git"
+    "url": "git+https://github.com/ore-code/ore-tag.git"
   },
   "keywords": [
     "js",
