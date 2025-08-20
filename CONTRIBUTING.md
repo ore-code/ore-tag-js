@@ -1,4 +1,4 @@
-# Contributing to ore-js
+# Contributing to ore-tag
 
 Thank you for your interest in contributing to ore-css! We welcome all contributions that help improve this project.
 
@@ -9,7 +9,7 @@ Thank you for your interest in contributing to ore-css! We welcome all contribut
 Click the "Fork" button at the top-right corner of the page and clone your fork locally:
 
 ```bash
-git clone https://github.com/ore-code/ore-js.git
+git clone https://github.com/ore-code/ore-tag.git
 cd ore-css
 ```
 
@@ -42,7 +42,7 @@ Please follow the existing coding conventions. If in doubt, match the style of t
 
 ## Reporting Bugs and Suggesting Features
 
-Feel free to open an [Issue](https://github.com/ore-code/ore-css/issues) for bugs, enhancements, or questions.
+Feel free to open an [Issue](https://github.com/ore-code/ore-tag/issues) for bugs, enhancements, or questions.
 
 ---
 
