@@ -9,15 +9,9 @@ Thank you for your interest in contributing. We welcome all contributions that h
 Click the "Fork" button at the top-right corner of the page and clone your fork locally:
 
 ```bash
-<<<<<<< HEAD
 git clone https://github.com/ore-code/ore-tag.git
-cd ore-css
-=======
-git clone https://github.com/ore-code/ore-tag-js.git
-cd ore-data-js
->>>>>>> 28411b51332eb5b605884d2cacc11015af4629ce
-```
-
+cd ore-tag
+ 
 ### 2. Create a Branch
 
 Create a feature or bugfix branch off of `main`:
@@ -46,12 +40,9 @@ Push your branch and open a pull request from your fork on GitHub. Please includ
 Please follow the existing coding conventions. If in doubt, match the style of the surrounding code.
 
 ## Reporting Bugs and Suggesting Features
-
-<<<<<<< HEAD
-Feel free to open an [Issue](https://github.com/ore-code/ore-tag/issues) for bugs, enhancements, or questions.
-=======
+ 
 Feel free to open an [Issue](https://github.com/ore-code/ore-tag-js/issues) for bugs, enhancements, or questions.
->>>>>>> 28411b51332eb5b605884d2cacc11015af4629ce
+ 
 
 ---
 
