@@ -37,4 +37,4 @@ No build tools. No JSX. Ore Tag is a component library to build simple, lightwei
 
 ## Contributing
 
-We welcome contributions from the community! To get started, please review our [Contributing Guidelines](https://github.com/ore-code/ore-js/blob/main/CONTRIBUTING.md)
+We welcome contributions from the community! To get started, please review our [Contributing Guidelines](https://github.com/ore-code/ore-tag-js/blob/main/CONTRIBUTING.md)

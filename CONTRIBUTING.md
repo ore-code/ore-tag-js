@@ -1,6 +1,6 @@
-# Contributing to ore-tag
+# Contributing
 
-Thank you for your interest in contributing to ore-css! We welcome all contributions that help improve this project.
+Thank you for your interest in contributing. We welcome all contributions that help improve this project.
 
 ## How to Contribute
 
@@ -9,8 +9,13 @@ Thank you for your interest in contributing to ore-css! We welcome all contribut
 Click the "Fork" button at the top-right corner of the page and clone your fork locally:
 
 ```bash
+<<<<<<< HEAD
 git clone https://github.com/ore-code/ore-tag.git
 cd ore-css
+=======
+git clone https://github.com/ore-code/ore-tag-js.git
+cd ore-data-js
+>>>>>>> 28411b51332eb5b605884d2cacc11015af4629ce
 ```
 
 ### 2. Create a Branch
@@ -42,8 +47,12 @@ Please follow the existing coding conventions. If in doubt, match the style of t
 
 ## Reporting Bugs and Suggesting Features
 
+<<<<<<< HEAD
 Feel free to open an [Issue](https://github.com/ore-code/ore-tag/issues) for bugs, enhancements, or questions.
+=======
+Feel free to open an [Issue](https://github.com/ore-code/ore-tag-js/issues) for bugs, enhancements, or questions.
+>>>>>>> 28411b51332eb5b605884d2cacc11015af4629ce
 
 ---
 
-Thanks again for helping make ore-css better!
+Thanks again for helping make it better!
