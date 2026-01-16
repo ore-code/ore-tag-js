@@ -60,11 +60,7 @@ export default class OreTag extends HTMLElement {
             // 3. Execute the created lifecycle method.
             //
             this.created();
-
-            //
-            // 4. Execute an initial render to draw the component.
-            //
-            this._render();
+ 
         }
 
     /* Class Methods */
@@ -78,6 +74,11 @@ export default class OreTag extends HTMLElement {
             // 1. Invoke the mounted lifecycle hook.
             //
             this.mounted();
+
+			//
+            // 2. Perform an initial render.
+            //
+            this._render();
         }
 
         /**
@@ -139,20 +140,30 @@ export default class OreTag extends HTMLElement {
             // 2. Check to make sure we are allowed to update.
             //
 		    if(this.canUpdate(_nextAttrs, this.state) == true) {
+				//
+                // A. Invoke the updating lifecycle hook.
                 //
-                // A. Set the attribute value.
+				this.updating(_nextAttrs, this.state);
+
+                //
+                // B. Set the attribute value.
                 //
                 super.setAttribute(_name, _value);
 
                 //
-                // B. Update the attribute object.
+                // C. Update the attribute object.
                 //
                 this.attrs = _nextAttrs;
 
                 //
-                // C. Rerender the component.
+                // D. Rerender the component.
                 //
                 this._render();
+				
+                //
+                // E. Invoke the updated lifecycle hook.
+                //
+				this.updated();
             }
         }
         
@@ -170,16 +181,26 @@ export default class OreTag extends HTMLElement {
             //
             // 2. Check to make sure we are allowed to update.
             //
-		    if(this.canUpdate(this.attrs, _nextState) == true) {
+		    if(this.canUpdate(this.attrs, _nextState) == true) {                
                 //
-                // A. Update the state object.
+                // A. Invoke the updating lifecycle hook.
+                //
+				this.updating(this.attrs, _nextState);
+
+				//
+                // B. Update the state object.
                 //
                 this.state = _nextState;
 
                 //
-                // B. Rerender the component.
+                // C. Rerender the component.
                 //
                 this._render();
+
+                //
+                // D. Invoke the updated lifecycle hook.
+                //
+				this.updated();
             }
         }
 
@@ -212,7 +233,7 @@ export default class OreTag extends HTMLElement {
                 //
                 // B. Bind our event handlers.
                 //
-                this._bind();
+                this._bind();				 
             }
         }
 
@@ -274,7 +295,7 @@ export default class OreTag extends HTMLElement {
          * Invoked when the component is removed from the DOM.
          * @public
          */
-        dismounted() {}
+        unmounted() {}
         
         /**
          * Invoked after the component was created.
@@ -290,17 +311,32 @@ export default class OreTag extends HTMLElement {
         render() { return ""; }
 
         /**
-         * Invoked before the component is rendered.
+         * Determines whether the component is allowed to render.
          * @public
          * @return {boolean} True to allow rendering.
          */
         canRender() { return true; }
 
         /**
-         * Invoked before attr or state is updated.
+         * Determines whether the component is allowed to update.
          * @public
          * @param  {Object} _nextAttrs - The next attributes.
-         * @return {Object} _nextState - The next state.
+		 * @param  {Object} _nextState - The next state.
+         * @return {boolean} True to allow updating.
          */
         canUpdate(_nextAttrs, _nextState) { return true; } 
+		
+        /**
+         * Invoked before attr or state is updated.
+         * @public
+         * @param {Object} _nextAttrs - The next attributes.
+         * @param {Object} _nextState - The next state.
+         */
+        updating(_nextAttrs, _nextState) {} 
+
+        /**
+         * Invoked after attr or state is updated.
+         * @public
+         */
+        updated() {}
 }

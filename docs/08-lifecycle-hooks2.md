@@ -98,84 +98,51 @@ The `canRender()` method is called right before a component attempts to render. 
 
 ## canUpdate()
 
-This method is called before a component applies any state or attribute changes. Return `true` to allow the update, or `false` to block it. This lets you prevent unnecessary renders or enforce update rules.
+The `canUpdate(attrs, state)` method is called before a component rerenders due to a state or attribute update. Return `true` to allow the update, or `false` to block it. This lets you prevent unnecessary renders or enforce update rules.
 
 **JS**
 
-	class HelloWidget extends OreTag {
-		created() {
-			this.state = {
-				name: "World"
-			}
-		}
-		canUpdate() {
-			return false;
-		}
-		render() {					 
-			return `
-				<p>Hello ${this.state.name}</p>
-			`;
-		}
-	}
+    class CounterWidget extends OreComponent {
+        canUpdate(attrs, state) {
+            // Only allow updates if count is not negative
+            return state.count >= 0;
+        }
 
-	OreTag.register("hello-widget", HelloWidget);
-	
-	document.querySelector("hello-widget").updateState({
-		name: "Ore"
-	});
-	
+        constructor() {
+            super();
+            this.state = { count: 0 };
+        }
+
+        render() {
+            return `<div>Count: ${this.state.count}</div>`;
+        }
+    }
+
+    OreComponent.register("counter-widget", MyCounterWidgetWidget);
+
+**HTML**
+
+    <counter-widget></counter-widget>
+
 ## updating()
 
-This method is called after an update has been approved but before the component rerenders. It is intended for performing any preparations or setup needed prior to rendering, such as cleanup or temporary calculations.
+The updating() method is invoked immediately before a component rerenders due to a state or attribute change. This hook is useful for performing last-minute setup, measurements, or side effects before the DOM is replaced.
 
 **JS**
 
-	class HelloWidget extends OreTag {
-		created() {
-			this.state = {
-				name: "World"
-			}
+	class HelloComponent extends OreTag {
+		canUpdate(attrs, state) {
+			//
+			// Prevent the component from updating.
+			//
+			return false;
 		}
-		updating() {
-			console.log("Component is updating.");
-		}
-		render() {					 
-			return `
-				<p>Hello ${this.state.name}</p>
-			`;
+
+		render() {
+			return `<p>Hello World</p>`;
 		}
 	}
 	
-	OreTag.register("hello-widget", HelloWidget);
-	
-	document.querySelector("hello-widget").updateState({
-		name: "Ore Tag"
-	});
+	OreTag.register("hello-component", HelloComponent);
 
-## updated()
-
-This method is called after the component has rerendered and the shadow DOM has been updated. It is intended for post-render tasks, such as querying the DOM, managing focus, or interacting with newly rendered elements.
-
-**JS**
-
-	class HelloWidget extends OreTag {
-		created() {
-			this.state = {
-				name: "World"
-			}
-		}
-		updated() {
-			console.log("Component was updated.");
-		}
-		render() {					 
-			return `
-				<p>Hello ${this.state.name}</p>
-			`;
-		}
-	}
-	
-	OreTag.register("hello-widget", HelloWidget);
-	
-	document.querySelector("hello-widget").updateState({
-		name: "Ore Tag"
-	});
+	document.querySelector("hello-component").updateState();
