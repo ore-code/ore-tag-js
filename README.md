@@ -1,6 +1,17 @@
 # Ore Tag
 
-No build tools. No JSX. Ore Tag is a component library to build simple, lightweight components that run lightning-fast on the metal, directly in your browser. Effortlessly craft high-performance, elegant web components with zero setup, delivering smooth and seamless experiences that feel instant and intuitive.
+*A lightweight framework for creating Web Components with reactive,
+attribute-driven rendering.* 
+
+No build tools required. No JSX. Ore Tag runs directly on the metal, using pure browser APIs with zero abstraction tax. Render with plain HTML strings and optionally enable morphdom powered diffing for finer grained updates without giving up simplicity.
+
+**Philosophy**
+
+* Attributes and state are the reactive inputs
+* Rendering is explicit and synchronous
+* HTML is the template language
+* Diffing is optional, not required
+* Zero build tools, zero ceremony
 
 ## Example
 
@@ -10,30 +21,17 @@ No build tools. No JSX. Ore Tag is a component library to build simple, lightwei
         render() {
             return `
                 <div>
-                    Hello, World!
+                    Hello, ${this.attrs.name}!
                 </div>
             `;
         }
     }
  
-    OreTag.register("hello-widget", HelloWidget);
+    OreTag.register("hello-widget", HelloWidget, ["name"]);
 
 **HTML**
 
-    <hello-widget></hello-widget>
-
-## Documentation
-
-- [Overview](docs/01-overview.md)
-- [Basic Component](docs/02-basic-component.md)
-- [Attributes](docs/03-attrs.md)
-- [State](docs/04-state.md)
-- [Methods](docs/05-methods.md)
-- [Events](docs/06-events.md)
-- [Child Elements](docs/07-child-elements.md)
-- [Lifecycle Hooks](docs/08-lifecycle-hooks.md)
-- [Styling](docs/09-styling.md)
-- [Defering](docs/10-defering.md)
+    <hello-widget name="World"></hello-widget>
 
 ## Contributing
 

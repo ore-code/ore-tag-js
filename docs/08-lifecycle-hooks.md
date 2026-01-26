@@ -124,7 +124,7 @@ This method is called before a component applies any state or attribute changes.
 		name: "Ore"
 	});
 	
-## updating()
+## beforeUpdate()
 
 This method is called after an update has been approved but before the component rerenders. It is intended for performing any preparations or setup needed prior to rendering, such as cleanup or temporary calculations.
 
@@ -136,7 +136,7 @@ This method is called after an update has been approved but before the component
 				name: "World"
 			}
 		}
-		updating() {
+		beforeUpdate() {
 			console.log("Component is updating.");
 		}
 		render() {					 
@@ -152,7 +152,7 @@ This method is called after an update has been approved but before the component
 		name: "Ore Tag"
 	});
 
-## updated()
+## afterUpdate()
 
 This method is called after the component has rerendered and the shadow DOM has been updated. It is intended for post-render tasks, such as querying the DOM, managing focus, or interacting with newly rendered elements.
 
@@ -164,7 +164,7 @@ This method is called after the component has rerendered and the shadow DOM has 
 				name: "World"
 			}
 		}
-		updated() {
+		afterUpdate() {
 			console.log("Component was updated.");
 		}
 		render() {					 

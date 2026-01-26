@@ -5,6 +5,7 @@ import terser from '@rollup/plugin-terser'; // ✅ default import
 export default [
   {
     input: 'src/ore-tag.js',
+	treeshake: false,
     output: {
       file: 'dist/ore-tag.esm.js',
       format: 'esm',
@@ -13,6 +14,7 @@ export default [
   },
   {
     input: 'src/ore-tag.js',
+	treeshake: false,
     output: {
       file: 'dist/ore-tag.umd.js',
       format: 'umd',
