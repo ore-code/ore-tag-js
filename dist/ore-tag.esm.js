@@ -835,40 +835,35 @@ function coerce(value) {
  */
 class OreTag extends HTMLElement {
 	/**
-	 * Return the custom element's attributes in a key-value object. 
-	 * The object is updated automatically during the render pipeline
-	 * and should be treated as readonly.
+	 * Represents the element’s current HTML attributes  as a key-value object. 
 	 * 
 	 * @public
-	 * @type {Object.<string, string|boolean>}
+	 * @type {Object}
 	 * @default {}
 	 */
 	attrs = {};
 
 	/**
-	 * Return the custom element's internal state in a key-value object. 
-	 * The object is updated using the setState method.
+	 * Represents the element’s internal state as a key-value object.
 	 * 
 	 * @public
-	 * @type {Object.<string, any>}
+	 * @type {Object}
 	 * @default {}
 	 */
 	state = {};
 
 	/**
-	 * Return the custom element's shadow DOM root. It is exposed for
-	 * internal rendering and event binding, and should be treated as
-	 * readonly.
+	 * Represents the element’s shadow DOM root.
 	 * 
 	 * @public
 	 * @type {ShadowRoot}
+	 * @readonly
 	 * @default undefined
 	 */
 	root = undefined;
 
 	/**
-	 * Return a list of attributes observed by the custom element.
-	 * Set by the register() method and read by observedAttributes.
+	 * Stores the list of attributes the element observes for changes.
 	 * 
 	 * @private
 	 * @static
@@ -877,9 +872,8 @@ class OreTag extends HTMLElement {
 	static _observed = [];
 
 	/**
-	 * Tracks attached listeners so we can remove them before  
-	 * rebinding. It also prevents duplicates and leaks in  
-	 * morphdom mode.  
+	 * Stores the element’s currently bound event listeners for cleanup 
+	 * and re-binding. 
 	 * 
 	 * @private
 	 * @type {{el: Element, event: string, bound: Function}[]}
@@ -887,9 +881,7 @@ class OreTag extends HTMLElement {
 	#bindings = [];
 
 	/**
-	 * Return whether the element has completed its initial render.  
-	 * It's set to true at the end of the initial resync() cycle and  
-	 * can be used to ignore early updated() calls.
+	 * Indicates whether the element has completed its initial render.
 	 * 
 	 * @public
 	 * @type {boolean}
@@ -898,8 +890,7 @@ class OreTag extends HTMLElement {
 	hasRendered = false;
 
 	/**
-	 * Return whether the element will use DOM diffing when rending. 
-	 * This is done using morphdom  
+	 * Enables DOM diffing during rendering when set to true. 
 	 * 
 	 * @public
 	 * @static
@@ -1029,12 +1020,12 @@ class OreTag extends HTMLElement {
 	} 
 
 	/**
-	 * Register a custom element and set its observed attributes.
+	 * Registers the custom element with its observed attributes.
 	 * 
 	 * @public
-	 * @param {string} name - The tag name for the custom element
+	 * @param {string} name - The tag name for the element
 	 * @param {Function} el - The class extending OreTag
-	 * @param {string[]} observed - Array of attributes to observe
+	 * @param {string[]} observed - The attributes to observe
 	 */
 	static register(name, el, observed) {
 		//
@@ -1047,7 +1038,12 @@ class OreTag extends HTMLElement {
 		//
 		customElements.define(name, el);
 	}
-
+	/**
+	 * Updates the element’s internal state.
+	 * 
+	 * @public
+	 * @param {Object} values - The new state values
+	 */
 	setState(values) {		
 		//
 		// Predict what the state will look like.
@@ -1082,10 +1078,7 @@ class OreTag extends HTMLElement {
 	}
 
 	/**
-	 * Re-renders the element by re-reading all HTML attributes, updating
-	 * the shadow DOM, and rebinding events. This method runs the normal
-	 * render pipeline and respects canRender(). Safe for users to call
-	 * at any time to manually trigger a redraw.
+	 * Forces the element to re-render using its current state and attributes.
 	 *
 	 * @public
 	 */
@@ -1093,7 +1086,7 @@ class OreTag extends HTMLElement {
 		//
 		// Update the attrs object with the latest HTML attributes.
 		//
-		this.attrs = toAttrObject(this.attributes);
+		//this.attrs = toAttrObject(this.attributes);
 
 		//
 		// Only render if canRender() returns true.
@@ -1111,7 +1104,6 @@ class OreTag extends HTMLElement {
 			// Update the shadow DOM with the template from render().
 			//
 			this._reconcile(this.render());
-			//this.render();
 
 			//
 			// Bind events to elements inside the shadow DOM.
@@ -1248,37 +1240,29 @@ class OreTag extends HTMLElement {
 	}
 
 	/**
-	 * This lifecycle method is called when the custom element is first.
-	 * constructed. It's used to perform setup that should happen before 
-	 * the element is attached to the DOM.
+	 * Invoked when the element is constructed and before it is connected 
+	 * to the DOM.
 	 * 
 	 * @public
 	 */
 	created() {}
 
 	/**
-	 * This lifecycle method is called when the custom element is mounted  
-	 * to the DOM. It's used to to perform setup that requires the element  
-	 * to be in the document, such as measuring layout or starting timers.
+	 * Invoked when the element is attached to the DOM.
 	 * 
 	 * @public
 	 */
 	mounted() {}
 
 	/**
-	 * This lifecycle method is called when the custom element is removed  
-	 * from the DOM. It's used to cleanup resources, remove event listeners, 
-	 * or stop timers that were started in mounted().
+	 * Invoked when the element is removed from the DOM.
 	 * 
 	 * @public
 	 */	
 	unmounted() {}
 
 	/**
-	 * This lifecycle methods determines if the custom element should be
-	 * rendered at this time. It's called before updating the shadow DOM
-	 * during the resync(). Return true will allow rendering, or false to
-	 * skip it.
+	 * Returns a boolean that determines whether the element should render.
 	 * 
 	 * @public
 	 * @return {boolean} True if rendering should proceed.
@@ -1286,9 +1270,7 @@ class OreTag extends HTMLElement {
 	canRender() { return true; } 
 
 	/**
-	 * This returns the HTML template for the custom element's shadow DOM.  
-	 * It's called during resync() to generate the content. Override this
-	 * to define the structure.
+	 * Returns the element’s HTML as a string.
 	 * 
 	 * @public
 	 * @return {string} The HTML string for the shadow DOM.
@@ -1296,8 +1278,9 @@ class OreTag extends HTMLElement {
 	render() { return ``; }
 
 	/**
-	 * This lifecycle method determines if the internal state can be
-	 * updated.
+	 * Returns a boolean that determines whether the internal state should 
+	 * update.
+	 * 
 	 * @public
 	 * @param {Object} newState - The previous state
 	 * @return {boolean} True if updating should proceed.	  
@@ -1305,7 +1288,8 @@ class OreTag extends HTMLElement {
 	canUpdateState(newState) { return true;}
 
 	/**
-	 * This lifecycle method is called after the internal state has
+	 * Invoked after the internal state has changed.
+	 * 
 	 * changed.
 	 * @public
 	 * @param {Object} prevState - The previous state
@@ -1313,8 +1297,8 @@ class OreTag extends HTMLElement {
 	updatedState(prevState) {}
 
 	/**
-	 * This lifecycle method is called after an observed attribute has
-	 * changed.
+	 * Invoked after an observed attribute has changed.
+	 * 
 	 * @public
 	 * @param {Object} prevAttribs - The previous attributes
 	 */

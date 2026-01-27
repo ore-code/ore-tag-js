@@ -13,6 +13,10 @@ No build tools required. No JSX. Ore Tag runs directly on the metal, using pure 
 * Diffing is optional, not required
 * Zero build tools, zero ceremony
 
+## Documentation
+
+* [docs/api/toc.md](API)
+
 ## Example
 
 **JS**
