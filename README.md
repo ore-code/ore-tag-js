@@ -15,7 +15,7 @@ No build tools required. No JSX. Ore Tag runs directly on the metal, using pure 
 
 ## Documentation
 
-* [docs/api/toc.md](API)
+* [API](docs/api/toc.md)
 
 ## Example
 
