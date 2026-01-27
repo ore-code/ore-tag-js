@@ -2,26 +2,26 @@
 
 ## Properties
 
-* [attr](prop_attr.md)
-* [hasRendered](prop_hasRendered.md)
-* [root](prop_root.md)
-* [state](prop_state.md)
-* [useDiffing](prop_useDiffing.md)
+* [attr](properties/attr.md)
+* [hasRendered](properties/hasRendered.md)
+* [root](properties/root.md)
+* [state](properties/state.md)
+* [useDiffing](properties/useDiffing.md)
 
 ## Methods
 
-* [register()](register.md)
-* [render()](render.md)
-* [resync()](resync.md)
-* [setState()](setState.md)
+* [register()](methods/register.md)
+* [render()](methods/render.md)
+* [resync()](methods/resync.md)
+* [setState()](methods/setState.md)
 
 ## Lifecycle Hooks
 
-* [canRender](hook_canRender.md)
-* [canUpdateState](hook_canUpdateState.md)
-* [created](hook_created.md)
-* [mounted](hook_mounted.md)
-* [unmounted](hook_unmounted.md)
-* [updatedAttrs](hook_updatedAttrs)
-* [updatedState](hook_updatedState)
+* [canRender](lifecycle_hooks/canRender.md)
+* [canUpdateState](lifecycle_hooks/canUpdateState.md)
+* [created](lifecycle_hooks/created.md)
+* [mounted](lifecycle_hooks/mounted.md)
+* [unmounted](lifecycle_hooks/unmounted.md)
+* [updatedAttrs](lifecycle_hooks/updatedAttrs)
+* [updatedState](lifecycle_hooks/updatedState)
 
