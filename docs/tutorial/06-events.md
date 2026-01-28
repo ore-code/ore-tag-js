@@ -17,7 +17,7 @@ Ore lets you connect DOM events in your template to methods on your component. W
 ## Binding to an Event
 
 Use `@eventName="methodName"` on an element inside `render`. The name after `@` is the event to listen for, and the string after `=` must match a method on your component. When that event occurs, Ore calls the method with `this` set to the component.
- 
+
 **JS**
 
 ```js

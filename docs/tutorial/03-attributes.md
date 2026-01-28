@@ -58,6 +58,7 @@ OreTag.register("say-hello", SayHello, ["name"]);
 
 You can change attributes with standard DOM methods. When you update an attribute on the element, the new value appears in the attrs object, and the component will react to it if the attribute is observed.
 
+### Example
 
 **JS**
 
@@ -80,32 +81,4 @@ document.getElementById("greeting").setAttribute("name", "Ore");
 ```html
 <say-hello id="greeting" name="world"></say-hello>
 ``` 
-
-## The updatedAttrs Hook
-
-The `updatedAttrs` hook runs whenever an observed attribute changes. It gives your component a chance to compare the previous values with the new ones before the component draws itself again. This is useful for work that depends on attribute changes, such as loading data, updating state, or running side effects.
-
-**JS**
-
-```js
-class SayHello extends OreTag {
-	updatedAttrs(prevAttrs) {
-		console.log("Previous:", prevAttrs.name);
-	}
-	render() {
-		return `
-			<p>Hello ${this.attrs.name}</p>
-		`;
-	}
-}
-
-OreTag.register("say-hello", SayHello, ["name"]);
-
-document.getElementById("greeting").setAttribute("name", "Ore");
-```
-
-**HTML**
-
-```html
-<say-hello name="world"></say-hello>
-``` 
+ 

@@ -8,7 +8,9 @@ this.state
 
 ## Default State
 
-You can define default state values in the `created` hook. This hook runs when the component is constructed, so it is the right place to set up the initial state object.
+You can define default state values in the `created` lifecycle hook. This lifecycle hook runs when the component is constructed, so it is the right place to set up the initial state object.
+
+### Example
 
 **JS**
 
@@ -47,42 +49,6 @@ class SayHello extends OreTag {
 		this.state = {
 			name: "world"
 		};
-	}
-	render() {
-		return `
-			<p>Hello ${this.state.name}</p>
-		`;
-	}
-}
-
-OreTag.register("say-hello", SayHello);
-
-document.getElementById("greeting").setState({
-	name: "Ore"
-);
-```
-
-**HTML**
-
-```html
-<say-hello id="greeting"></say-hello>
-``` 
-
-## The updatedState Hook
-
-The `updatedState` hook runs whenever the component’s state changes. It receives the previous state values, giving your component a chance to compare them with the new ones before the component draws itself again. This is useful for work that depends on state changes, such as loading data, syncing with attributes, or running side effects.
-
-**JS**
-
-```js
-class SayHello extends OreTag {
-	created() {
-		this.state = {
-			name: "world"
-		};
-	}
-	updatedState(prevState) {
-		console.log("Previous:", prevState.name);
 	}
 	render() {
 		return `

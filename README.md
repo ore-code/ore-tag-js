@@ -15,27 +15,32 @@ No build tools required. No JSX. Ore Tag runs directly on the metal, using pure 
 
 ## Documentation
 
+* [Tutorial](docs/Tutorial/toc.md)
 * [API](docs/api/toc.md)
 
 ## Example
-
 **JS**
 
-    class HelloWidget extends OreTag {
-        render() {
-            return `
-                <div>
-                    Hello, ${this.attrs.name}!
-                </div>
-            `;
-        }
+```js
+class SayHello extends OreTag {
+    greet() {
+        console.log("Hello World");
     }
- 
-    OreTag.register("hello-widget", HelloWidget, ["name"]);
 
+    render() {
+        return `
+            <button @click="greet">Say Hello</button>
+        `;
+    }
+}
+
+OreTag.register("say-hello", SayHello);
+ 
 **HTML**
 
-    <hello-widget name="World"></hello-widget>
+```html
+<say-hello></say-hello>
+``` 
 
 ## Contributing
 
