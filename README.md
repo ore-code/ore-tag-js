@@ -1,17 +1,15 @@
 # Ore Tag
 
-*A lightweight framework for creating Web Components with reactive,
-attribute-driven rendering.* 
+A lightweight and powerful framework built on native Web Components with a clear render and update pipeline.
 
-No build tools required. No JSX. Ore Tag runs directly on the metal, using pure browser APIs with zero abstraction tax. Render with plain HTML strings and optionally enable morphdom powered diffing for finer grained updates without giving up simplicity.
+**Features**
 
-**Philosophy**
-
-* Attributes and state are the reactive inputs
-* Rendering is explicit and synchronous
-* HTML is the template language
-* Diffing is optional, not required
-* Zero build tools, zero ceremony
+* No manditory diffing (per-component or global toggle)
+* No abstraction tax
+* No build tools
+* No JSX
+* No ceremony
+* No bullshit
 
 ## Documentation
 

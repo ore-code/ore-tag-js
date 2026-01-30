@@ -27,7 +27,7 @@ OreTag.register("my-widget", MyWidget);
 **HTML**
 
 ```html
-<say-hello>
+<say-hello defer>
 	<p>Hello World</p>
 </say-hello>
 ```  
